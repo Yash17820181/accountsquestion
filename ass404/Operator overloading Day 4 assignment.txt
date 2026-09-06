@@ -1,0 +1,178 @@
+
+1. Calculate Employee Salary 
+
+Create a Employee class, to store empid, name and basic salary 
+Add all neccessary functions
+Overload << and >> operator to accept and display employee object
+overload function named calculateSalary().
+
+Overload the function to calculate salary in different situations:
+
+Calculate salary using monthly basic salary.
+Calculate salary using basic salary and bonus. 
+Calculate salary using basic salary, bonus, and overtime amount.
+Calculate salary for an employee using hourly rate and number of hours worked.
+
+Write main function test overloading of calculateSalary() with different numbers and types of parameters.
+
+2. Calculate Travel Fare
+
+Create a Booking class to store bookingid, source, destination, distance,fare
+Add all required functions(copy constructor parametrised constructor with default values, setter, getter methods)
+And overload calculateFare().
+Overload << and >> operator to accept and display Booking class object
+
+The function should calculate the fare in different ways:
+
+Calculate fare based only on the distance travelled.
+Calculate fare based on distance and vehicle type.
+Calculate fare based on distance, vehicle type, and number of passengers.
+Calculate fare for a premium booking with additional service charges.
+
+Task: Use function overloading to provide different versions of calculateFare().
+
+
+
+
+3. Design Time Class Using Operator Overloading
+
+Design and implement a C++ class named `Time` to represent a time duration using two data members:
+
+* Hours
+* Minutes
+Overload << and >> operator to accept and display Time class object
+
+The class should maintain a valid time representation where 
+**60 minutes are equal to 1 hour
+**. Whenever an operation causes the minutes to become greater than or equal to 60, the extra minutes should be converted into hours. Similarly, when subtracting time, borrowing should be handled correctly.
+
+
+Design default, parametrised and copy constructor
+
+
+The class should ensure that the time remains in a valid format after every operation.
+
+
+### 2. Overload the `+` Operator
+
+Overload the `+` operator to add two `Time` objects.
+
+The addition should add both the hours and minutes.
+
+If the total number of minutes is greater than or equal to 60, convert the extra minutes into hours.
+
+For example:
+
+* 2 hours 30 minutes + 1 hour 45 minutes = 4 hours 15 minutes
+* 10 hours 50 minutes + 2 hours 30 minutes = 13 hours 20 minutes
+
+The `+` operation should create and return a new Time object without modifying the original objects.
+
+ 3. Overload the `-` Operator
+
+Overload the `-` operator to subtract one `Time` object from another.
+
+If the minutes of the first object are smaller than the minutes of the second object, borrow one hour and convert it into 60 minutes before performing the subtraction.
+
+For example:
+
+* 5 hours 30 minutes − 2 hours 45 minutes = 2 hours 45 minutes
+* 10 hours 15 minutes − 2 hours 30 minutes = 7 hours 45 minutes
+
+The subtraction operation should return a **new `Time` object** and should not modify the original objects.
+
+---
+
+### 4. Overload the Assignment `=` Operator
+
+Overload the assignment operator to copy the hours and minutes from one `Time` object to another.
+
+The assignment operation should support expressions where multiple objects are assigned in a single statement.
+
+For example:
+
+* Assign one `Time` object to another.
+* Perform chained assignment involving three or more `Time` objects.
+* Test self-assignment.
+
+The assignment operator should return the appropriate object so that chained assignment behaves naturally.
+
+---
+
+### 5. Overload Prefix Increment `++`
+
+Define the prefix increment operation so that it **adds one minute** to the current `Time` object.
+
+For example:
+
+* Before increment: 10 hours 59 minutes
+* After prefix increment: 11 hours 00 minutes
+
+The operation should modify the existing object and return the updated object according to normal C++ operator conventions.
+
+---
+
+### 6. Overload Postfix Increment `++`
+
+Define the postfix increment operation so that it also adds one minute to the `Time` object.
+
+However, the postfix operation must preserve the original value before incrementing.
+
+For example:
+
+* Original time: 10 hours 59 minutes
+* Store the result of the postfix operation in another object.
+* The new object should contain 10 hours 59 minutes.
+* The original object should become 11 hours 00 minutes.
+
+The postfix form should return the **old state/value** of the object. The postfix operator is distinguished from the prefix version using a dummy integer parameter.
+
+---
+
+### 7. Overload Prefix Decrement `--`
+
+Define the prefix decrement operation so that it **subtracts one minute** from the current `Time` object.
+
+For example:
+
+* Before decrement: 11 hours 00 minutes
+* After decrement: 10 hours 59 minutes
+
+If the number of minutes becomes negative, borrow one hour and adjust the minutes accordingly.
+
+The operation should modify the existing object and return the updated object.
+
+---
+
+### 8. Overload Postfix Decrement `--`
+
+Define the postfix decrement operation so that it subtracts one minute but returns the value of the object **before decrementing**.
+
+For example:
+
+* Original time: 11 hours 00 minutes
+* Store the result of the postfix operation in another object.
+* The new object should contain 11 hours 00 minutes.
+* The original object should become 10 hours 59 minutes.
+
+The postfix operation should preserve and return the old value while modifying the original object.
+
+---
+
+## Testing Requirements
+
+Write a TestTime class add main method  to test following operations:
+
+1. Create multiple `Time` objects. //practice calling all 3 types of constructor
+2. Initialize them with different hours and minutes.
+3. Add two `Time` objects.
+4. Subtract one `Time` object from another.
+5. Assign one `Time` object to another.
+6. Perform chained assignment.
+7. Perform prefix increment.
+8. Perform postfix increment and verify the difference between the old and new values.
+9. Perform prefix decrement.
+10. Perform postfix decrement and verify the difference between the old and new values.
+11. Display the result after every operation.
+
+
